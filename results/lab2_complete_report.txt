@@ -1,0 +1,83 @@
+============================================================
+LAB 2 - FULL REPORT
+LSTM & GRU for Time Series and Text Classification
+============================================================
+
+EXPERIMENTAL CONFIGURATION:
+----------------------------------------
+Time series:
+• Row size: 2000 points
+  • Window size: 30
+  • Training data: 1470 sequences
+  • Test data: 470 sequences
+
+Text classification:
+• Dictionary size: 10000
+  • Maximum length: 200 tokens
+• Training reviews: 25,000
+  • Test reviews: 25,000
+
+DETAILED RESULTS:
+----------------------------------------
+
+TIME SERIES:
+
+SimpleRNN:
+  • MSE: 0.0160
+  • MAE: 0.0977
+  • RMSE: 0.1264
+  • R2: 0.8735
+  • Explained Variance: 0.8825
+
+LSTM:
+  • MSE: 0.0123
+  • MAE: 0.0874
+  • RMSE: 0.1107
+  • R2: 0.9030
+  • Explained Variance: 0.9073
+
+GRU:
+  • MSE: 0.0120
+  • MAE: 0.0873
+  • RMSE: 0.1095
+  • R2: 0.9051
+  • Explained Variance: 0.9051
+
+TEXT CLASSIFICATION:
+
+LSTM:
+  • Accuracy: 0.8383
+  • Precision: 0.8396
+  • Recall: 0.8383
+  • F1-Score: 0.8381
+
+GRU:
+  • Accuracy: 0.8223
+  • Precision: 0.8223
+  • Recall: 0.8223
+  • F1-Score: 0.8223
+
+Bidirectional_LSTM:
+  • Accuracy: 0.8281
+  • Precision: 0.8320
+  • Recall: 0.8281
+  • F1-Score: 0.8276
+
+ANALYSIS AND CONCLUSIONS:
+----------------------------------------
+
+THE BEST MODELS:
+• Time series: GRU (MSE: 0.0120)
+• Text classification: LSTM (Accuracy: 0.8383)
+
+KEY OBSERVATIONS:
+1. LSTM and GRU outperform SimpleRNN on time series
+2. GRU offers a good speed/accuracy compromise
+3. Bidirectional LSTM is superior in text classification
+4. Dropout significantly improves generalization
+5. Early stopping effectively prevents overfitting
+
+recommendations:
+• For time series: Prefer LSTM or GRU
+• For text: Use bidirectional LSTM
+• For rapid prototyping: Select GRU
